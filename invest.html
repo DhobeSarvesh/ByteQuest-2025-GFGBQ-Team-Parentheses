@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invest | StartSmall</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body { font-family: Arial; background: #f2f2f2; }
+        .box {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        select, input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Invest Money</h2>
+
+    <form method="post">
+        <input type="hidden" name="user" value="{{ user }}">
+
+        <label>Choose Investment Type</label>
+        <select name="option">
+            <option value="FD">Fixed Deposit (Low Risk)</option>
+            <option value="Gold">Gold</option>
+            <option value="MF">Mutual Fund</option>
+        </select>
+
+        <label>Enter Amount (₹)</label>
+        <input type="number" name="amount" min="10" required>
+
+        <button type="submit">Invest</button>
+    </form>
+</div>
+
+</body>
+</html>
